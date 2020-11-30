@@ -1,6 +1,5 @@
 class Customer < ApplicationRecord
   belongs_to :user
   has_many :tables, through: :reservations
-  validates :last_name, presence: true
-  validates :first_name, presence: true
+  validates :last_name, :first_name, :user_id, presence: true
 end
