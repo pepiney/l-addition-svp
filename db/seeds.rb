@@ -5,26 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Restaurant.create(name: "La poule et le coq", address: "Boulevard Diego Maradona", user_id: 1)
-Restaurant.create(name: "Chez Francis et Cabrel", address: "Boulevard des chutes lavie", user_id: 1)
-Restaurant.create(name: "Chez Dédé et Francine ", address: "Avenue des cagoles", user_id: 1)
-Restaurant.create(name: "La fourchette à l'envers", address: "Boulevard des Dames", user_id: 1)
-Restaurant.create(name: "La serpent sympa", address: "Rue du bout du monde", user_id: 1)
-Restaurant.create(name: "Sur la huchette", address: "Rue de la flûte traversière", user_id: 1)
-Restaurant.create(name: "L'hirondelle coquine", address: "Rue du Boulevard", user_id: 1)
-Restaurant.create(name: "Une vie, une avis", address: "La Casté", user_id: 1)
-Restaurant.create(name: "Sur la routes des papilles enchantées", address: "Cité fontvert", user_id: 1)
-Restaurant.create(name: "L'homme et la mer", address: "Rue de la vague", user_id: 1)
-User.create(email: "jo@gmail.com", password: "123456")
-User.create(email: "ja@gmail.com", password: "123456")
-Customer.create(user_id: 1, last_name: "dupont", first_name: "jean")
-Meal.create(meal_type: "Entrée", meal_name: "Tartare de thon", price: 17.50, restaurant_id: 1)
-Meal.create(meal_type: "Plat Principal", meal_name: "Soupe de Poisson spéciale", price: 47.00, restaurant_id: 1)
-Meal.create(meal_type: "Plat Principal", meal_name: "Pâte Carbo façon bolo", price: 14.50, restaurant_id: 1)
-Meal.create(meal_type: "Boissons", meal_name: "Leffe 25cl", price: 3.50, restaurant_id: 1)
-Meal.create(meal_type: "Dessert", meal_name: "Tartare de thon", price: 17.50, restaurant_id: 1)
-Table.create(restaurant_id: 1, num_table: 100)
-Table.create(restaurant_id: 1, num_table: 200)
-Table.create(restaurant_id: 1, num_table: 300)
-Table.create(restaurant_id: 1, num_table: 400)
-Table.create(restaurant_id: 1, num_table: 500)
+Table.destroy_all
+Restaurant.destroy_all
+Customer.destroy_all
+Meal.destroy_all
+User.destroy_all
+puts "User creation"
+user1 = User.create!(email: "jo@gmail.com", password: "123456")
+user2 = User.create!(email: "ja@gmail.com", password: "123456")
+puts "Customer creation"
+Customer.create!(user: user1, last_name: "dupont", first_name: "jean")
+puts "Restaurant creation"
+restaurant1 = Restaurant.create!(name: "La poule et le coq", address: "Boulevard Diego Maradona", user: user1)
+Restaurant.create!(name: "Chez Francis et Cabrel", address: "Boulevard des chutes lavie", user: user1)
+Restaurant.create!(name: "Chez Dédé et Francine ", address: "Avenue des cagoles", user: user1)
+Restaurant.create!(name: "La fourchette à l'envers", address: "Boulevard des Dames", user: user1)
+Restaurant.create!(name: "La serpent sympa", address: "Rue du bout du monde", user: user1)
+Restaurant.create!(name: "Sur la huchette", address: "Rue de la flûte traversière", user: user1)
+Restaurant.create!(name: "L'hirondelle coquine", address: "Rue du Boulevard", user: user1)
+Restaurant.create!(name: "Une vie, une avis", address: "La Casté", user: user1)
+Restaurant.create!(name: "Sur la routes des papilles enchantées", address: "Cité fontvert", user: user1)
+Restaurant.create!(name: "L'homme et la mer", address: "Rue de la vague", user: user1)
+puts "Meal creation"
+Meal.create!(meal_type: "Entrée", meal_name: "Tartare de thon", price: 17.50, restaurant: restaurant1)
+Meal.create!(meal_type: "Plat Principal", meal_name: "Soupe de Poisson spéciale", price: 47.00, restaurant: restaurant1)
+Meal.create!(meal_type: "Plat Principal", meal_name: "Pâte Carbo façon bolo", price: 14.50, restaurant: restaurant1)
+Meal.create!(meal_type: "Boissons", meal_name: "Leffe 25cl", price: 3.50, restaurant: restaurant1)
+Meal.create!(meal_type: "Dessert", meal_name: "Tartare de thon", price: 17.50, restaurant: restaurant1)
+puts "Table creation"
+Table.create!(restaurant: restaurant1, table_number: 100)
+Table.create!(restaurant: restaurant1, table_number: 200)
+Table.create!(restaurant: restaurant1, table_number: 300)
+Table.create!(restaurant: restaurant1, table_number: 400)
+Table.create!(restaurant: restaurant1, table_number: 500)

@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def restaurant_admin
+    @restaurants = current_user.restaurants
+  end
 end
