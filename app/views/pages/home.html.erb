@@ -1,2 +1,21 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 mt-5">
+      <% @restaurants.each do |restaurant| %>
+      <div class="card">
+        <div class="card-horizontal d-flex">
+          <div class="img-square-wrapper">
+          </div>
+          <div class="card-body ">
+            <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant)  %></h4>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="text-muted"><%=restaurant.address %></p>
+
+        </div>
+      </div>
+<%end%>
