@@ -9,9 +9,12 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @restaurants = Restaurant.find(params[:id])
+    @tables = Table.new
   end
 
   def create
+
   end
 
   def edit
