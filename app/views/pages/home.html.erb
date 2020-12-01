@@ -1,7 +1,6 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-8 mt-5">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="card-footer">
                     <p class="text-muted"><%=restaurant.address %></p>
-
+                    <p><%= link_to "Choose a new table", restaurant_tables_path(restaurant) %></p>
                 </div>
             </div>
             <%end%>

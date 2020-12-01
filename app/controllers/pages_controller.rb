@@ -8,4 +8,5 @@ class PagesController < ApplicationController
   def restaurant_admin
     @restaurants = current_user.restaurants
   end
+
 end
