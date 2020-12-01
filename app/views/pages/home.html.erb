@@ -16,6 +16,7 @@
                 <div class="card-footer">
                     <p class="text-muted"><%=restaurant.address %></p>
                     <p><%= link_to "Choose a new table", restaurant_tables_path(restaurant) %></p>
+                    <p><%= link_to "Menu", restaurant_meals_path(restaurant) %></p>
                 </div>
             </div>
             <%end%>
