@@ -4,7 +4,7 @@
 <% @tables.each do |table| %>
 <div class="card">
   <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
-    <h3>table n°<%= link_to table.table_number, tables_show_path(table) %></h3>
+    <h3>table n°<%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
     <h4><%= table.bill %></h4>
     <h4>paid = <%= table.paid? %></h4>
   <%else%>
