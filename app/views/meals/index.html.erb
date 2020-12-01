@@ -1,0 +1,25 @@
+<h1>MEALS</h1>
+<br>
+<h2>Starters</h2>
+<% @starters.each do |starter|%>
+  <p><%= starter.meal_name %> - <%= starter.price %>€</p>
+<% end %>
+
+<h2>Mains</h2>
+<br>
+<% @mains.each do |main| %>
+  <p><%= main.meal_name %> - <%= main.price %>€</p>
+<% end %>
+
+<h2>Desserts</h2>
+<br>
+<% @desserts.each do |dessert| %>
+  <p><%= dessert.meal_name %> - <%= dessert.price %>€</p>
+<% end %>
+
+<h2>Beverages</h2>
+<br>
+<% @beverages.each do |beverage| %>
+  <p><%= beverage.meal_name %> - <%= beverage.price %>€</p>
+<% end %>
+
