@@ -1,0 +1,17 @@
+<h1>Tables#index</h1>
+<h1><%= @restaurant.name %></h1>
+
+<% @tables.each do |table| %>
+<div class="card">
+  <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
+    <h3>table n°<%= link_to table.table_number, tables_show_path(table) %></h3>
+    <h4><%= table.bill %></h4>
+    <h4>paid = <%= table.paid? %></h4>
+  <%else%>
+    <h3>No table available</h3>
+  <% end %>
+</div>
+<% end %>
+
+<%= link_to "back", restaurant_path(@restaurant)  %>
+

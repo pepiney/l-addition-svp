@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tables/index'
+  get 'tables/show'
   devise_for :users
   root to: 'pages#home'
   get "/admin", to: 'pages#restaurant_admin'
