@@ -6,7 +6,10 @@
     <div class="col-md-8">
       <h1> <%= @restaurant.name %> </h1>
       <h6> <%= @restaurant.address %> </h6>
+      <h6> <%= @restaurant.description %> </h6>
+      <h6><%= link_to "Menu", restaurant_meals_path(@restaurant) %></h6>
       <p><%= link_to "Choose a new table", restaurant_tables_path(@restaurant) %></p>
+      <img src="<%= @restaurant.photo %>" alt="resto">
     </div>
   </div>
 </div>
