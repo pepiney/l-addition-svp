@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :reservations do
     resources :orders
   end
-
+  
   resources :customers
 
 end
