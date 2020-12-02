@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+  get 'orders/show'
+  get 'orders/create'
+  get 'orders/edit'
+  get 'orders/destroy'
   get 'tables/index'
   get 'tables/show'
   devise_for :users
@@ -10,13 +15,15 @@ Rails.application.routes.draw do
     resources :meals
     resources :tables
   end
-  
-  resources :tables do 
+
+  resources :tables do
     resources :reservations
   end
 
   resources :reservations do
     resources :orders
   end
+  
   resources :customers
+
 end
