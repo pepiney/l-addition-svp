@@ -12,6 +12,7 @@ class CustomersController < ApplicationController
 
   private
 
+
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :address, :date_of_birth)
   end
