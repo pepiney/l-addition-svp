@@ -7,9 +7,9 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     @customer.update(customer_params)
-    redirect_to "/profil"
-  end
 
+    redirect_to root_path, success: 'Ticket was successfully created.'
+  end
 
  private
 

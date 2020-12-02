@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def redirect_to_profil
     if current_user.customer == nil

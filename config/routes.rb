@@ -10,13 +10,17 @@ Rails.application.routes.draw do
     resources :meals
     resources :tables
   end
-  
-  resources :tables do 
+
+  resources :customers
+
+
+
+  resources :tables do
     resources :reservations
   end
 
   resources :reservations do
     resources :orders
   end
-  
+
 end
