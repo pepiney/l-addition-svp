@@ -22,6 +22,8 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:restaurant_id])
   end
 
+
+
   private
 
   def meals_params
