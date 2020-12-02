@@ -2,7 +2,8 @@
 <h1>MEALS</h1>
 
 <%= simple_form_for [@reservation, @order] do |f| %>
-  <%= f.input :meal_id, as: :check_boxes, collection: @starters, wrapper: :vertical_collection_inline %>
+  <%# f.association :meal_id, as: :check_boxes, collection: @starters, wrapper: :vertical_collection_inline %>
+  <%= f.association :meal, as: :check_boxes %>
 <% end %>
 
 <h2>Starters</h2>
