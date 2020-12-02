@@ -10,6 +10,7 @@
       <h6><%= link_to "Menu", restaurant_meals_path(@restaurant) %></h6>
       <p><%= link_to "Choose a new table", restaurant_tables_path(@restaurant) %></p>
       <img src="<%= @restaurant.photo %>" alt="resto">
+      <p><%= link_to "Réservez votre table", restaurant_tables_path(@restaurant) %></p>
     </div>
   </div>
 </div>
