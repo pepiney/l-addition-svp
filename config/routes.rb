@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   end
 
   resources :customers
-  resources :orders, only: [:show, :update, :edit, :destroy]
+  resources :orders, only: [:show, :update, :edit, :destroy, :index]
 end
