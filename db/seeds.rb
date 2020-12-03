@@ -14,7 +14,7 @@ puts "User creation"
 user1 = User.create!(email: "jo@gmail.com", password: "123456")
 user2 = User.create!(email: "ja@gmail.com", password: "123456")
 puts "Customer creation"
-Customer.create!(user: user1, last_name: "dupont", first_name: "jean")
+Customer.create!(user: user1, last_name: "dupont", first_name: "jean", avatar: "https://vignette.wikia.nocookie.net/loisetclark/images/7/74/Clark_30.PNG/revision/latest?cb=20180703121739&path-prefix=fr")
 puts "Restaurant creation"
 restaurant1 = Restaurant.create!(name: "La poule et le coq", address: "Boulevard Diego Maradona", user: user1, photo: "https://media.istockphoto.com/photos/beautiful-rooster-picture-id505294198?k=6&m=505294198&s=612x612&w=0&h=sUXwPS5l40dIHKbOxI__d0Ffh6KoPREIJ-0nKbcJ4Jg=", description: "On est un super resto les gars ho venez on a des poules des coqs et des poulettes")
 Restaurant.create!(name: "Chez Francis et Cabrel", address: "Boulevard des chutes lavie", user: user1)
