@@ -6,10 +6,26 @@ class MealsController < ApplicationController
     @order = Order.new
     @meals = Meal.all
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @starters = @meals.select { |meal| meal.meal_type == "Entrée" }
-    @mains = @meals.select { |meal| meal.meal_type == "Plat Principal" }
-    @desserts = @meals.select { |meal| meal.meal_type == "Dessert" }
-    @beverages = @meals.select { |meal| meal.meal_type == "Boissons" }
+    @starters_select = @meals.select { |meal| meal.meal_type == "Entrée" }
+    @starters = []
+    @starters_select.each do |meal|
+      @starters << meal.meal_name
+    end
+    @mains_select = @meals.select { |meal| meal.meal_type == "Plat Principal" }
+    @mains = []
+    @mains_select.each do |meal|
+      @mains << meal.meal_name
+    end
+    @desserts_select = @meals.select { |meal| meal.meal_type == "Dessert" }
+    @desserts = []
+    @desserts_select.each do |meal|
+      @desserts << meal.meal_name
+    end
+    @beverages_select = @meals.select { |meal| meal.meal_type == "Boissons" }
+    @beverages = []
+    @beverages_select.each do |meal|
+      @beverages << meal.meal_name
+    end
   end
 
   def update

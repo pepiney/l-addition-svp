@@ -38,21 +38,51 @@
 
 <% else %>
 
-    <%= simple_form_for [@reservation, @order] do |f| %>
-     <%= simple_form_for [@reservation, @order] do |p| %>
-    <%= f.association :meal, label_method: :meal_type, value_method: :id, include_blank: false %>
-    <%= f.association :meal, label_method: :meal_name, value_method: :id, include_blank: false %>
-    <%= f.button :submit %>
-    <% end %>
-    <% end %>
-
-
-    <%= simple_form_for [@reservation, @order] do |m| %>
-      <%= m.simple_fields_for :meal_type do |p| %>
-      <%= p.input :meal %>
-      <%= m.button :submit %>
+    <h2>Starters</h2>
+      <% @starters_select.each do |starter|%>
+        <%if @restaurant.name == starter.restaurant.name %>
+          <p><%= starter.meal_name %> - <%= starter.price %>€</p>
+        <% end %>
       <% end %>
-    <% end %>
+      <%= simple_form_for [@reservation, @order] do |f| %>
+        <%= f.input :meal, collection: @starters, include_blank: false %>
+        <%= f.button :submit, 'Choisissez une entrée' %>
+      <% end %>
+
+
+    <h2>Mains</h2>
+      <% @mains_select.each do |main| %>
+        <%if @restaurant.name == main.restaurant.name %>
+          <p><%= main.meal_name %> - <%= main.price %>€</p>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [@reservation, @order] do |f| %>
+        <%= f.input :meal, collection: @mains, include_blank: false %>
+        <%= f.button :submit %>
+      <% end %>
+
+    <h2>Desserts</h2>
+      <% @desserts_select.each do |dessert| %>
+        <%if @restaurant.name == dessert.restaurant.name %>
+          <p><%= dessert.meal_name %> - <%= dessert.price %>€</p>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [@reservation, @order] do |f| %>
+        <%= f.input :meal, collection: @desserts, include_blank: false %>
+        <%= f.button :submit %>
+      <% end %>
+
+
+    <h2>Beverages</h2>
+      <% @beverages_select.each do |beverage| %>
+        <%if @restaurant.name == beverage.restaurant.name %>
+          <p><%= beverage.meal_name %> - <%= beverage.price %>€</p>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [@reservation, @order] do |f| %>
+        <%= f.input :meal, collection: @beverages, include_blank: false %>
+        <%= f.button :submit %>
+      <% end %>
 
 
 
