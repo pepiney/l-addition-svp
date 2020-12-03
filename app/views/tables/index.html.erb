@@ -1,21 +1,24 @@
-<h1>Tables#index</h1>
-<h1><%= @restaurant.name %></h1>
-
-<% @tables.each do |table| %>
-<div class="card">
-  <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
-    <h3>table n°<%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
-    <h4><%= table.bill %></h4>
-    <h4><%= table.booked? %></h4>
-    <h4>paid = <%= table.paid? %></h4>
-    <%= link_to "reserver", table_reservations_path(table), method: :post, remote: true %>
-    
-  <%else%>
-    <h3>No table available</h3>
-  <% end %>
- 
+<h1 class="text-center">Tables#index</h1>
+<h1 class="text-center"><%= @restaurant.name %></h1>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 col-lg-6">
+      <% @tables.each do |table| %>
+        <div class="card">
+          <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
+            <h3>table n°<%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
+            <h4><%= table.bill %></h4>
+            <h4><%= table.booked? %></h4>
+            <h4>paid = <%= table.paid? %></h4>
+            <%= link_to "reserver", table_reservations_path(table), method: :post, remote: true, class:"btn btn-secondary" %>
+          
+          <%else%>
+            <h3>No table available</h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
-
-<%= link_to "back", restaurant_path(@restaurant)  %>
+<%= link_to "back", restaurant_path(@restaurant), class:"btn btn-secondary"  %>
 
