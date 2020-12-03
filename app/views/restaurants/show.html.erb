@@ -1,19 +1,24 @@
 <h1>Restaurants#show</h1>
 <p>Find me in app/views/restaurants/show.html.erb</p>
 
-<div class="container-fluid">
-   <div class="container">
-    <div class="col-md-8">
-      <h1> <%= @restaurant.name %> </h1>
-      <h6> <%= @restaurant.address %> </h6>
-      <h6> <%= @restaurant.description %> </h6>
-      <h6><%= link_to "Menu", restaurant_meals_path(@restaurant) %></h6>
-      <p><%= link_to "Choose a new table", restaurant_tables_path(@restaurant) %></p>
-      <img src="<%= @restaurant.photo %>" alt="resto">
-      <p><%= link_to "Réservez votre table", restaurant_tables_path(@restaurant) %></p>
-    </div>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="card">
+              <h1><%= @restaurant.name %> </h1>
+              <p><%= @restaurant.address %></p>
+              <p><%= @restaurant.description %></p>
+            <div class="row"> 
+              <p><%= link_to "Menu", restaurant_meals_path(@restaurant), class:"btn btn-secondary" %></p>
+              <p><%= link_to "Réservez votre table", restaurant_tables_path(@restaurant), class:"btn btn-secondary" %></p>
+            </div>
+              <img src="<%= @restaurant.photo %>" alt="resto">
+          </div> 
+        </div>
+      </div>
+   </div>
   </div>
-</div>
 
 
 
