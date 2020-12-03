@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
   end
-  
+
   def create
     @table = Table.find(params[:table_id])
     @reservation = Reservation.new
@@ -13,13 +13,13 @@ class ReservationsController < ApplicationController
     @reservation.table = @table
 
     if @reservation.save
-       @table.booked = true
+       @table.booked = !@table.booked
        @table.save
      redirect_to restaurant_meals_path(@reservation.table.restaurant)
     else
      redirect_to reservation_orders_path
     end
-    
+
   end
 
   #def destroy
