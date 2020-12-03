@@ -8,7 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:reservation_id])
+    @order = Order.find(params[:order_id])
+    @reservation = Reservation.find(params[:reservation_id])
   end
 
   def create
@@ -34,7 +35,7 @@ class OrdersController < ApplicationController
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    redirect_to orders_destroy_path
+    redirect_to order_path(@order)
   end
 
   private
