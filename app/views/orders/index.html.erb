@@ -4,4 +4,8 @@
 
 <% @orders.each do |order| %>
 <%= order.meal_id %>
+<%= link_to 'show', orders_show_path %>
+<%= link_to 'Destroy', orders_destroy_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
 <% end %>

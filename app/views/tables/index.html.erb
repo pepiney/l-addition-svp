@@ -9,11 +9,10 @@
     <h4><%= table.booked? %></h4>
     <h4>paid = <%= table.paid? %></h4>
     <%= link_to "reserver", table_reservations_path(table), method: :post, remote: true %>
-    
   <%else%>
     <h3>No table available</h3>
   <% end %>
- 
+
 </div>
 <% end %>
 

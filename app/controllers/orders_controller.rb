@@ -12,14 +12,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-
-    @meal = Meal.find(params[:order][:meal_id])
+    @meal = Meal.find_by(meal_name: params[:order][:meal])
     @reservation = Reservation.find(params[:reservation_id])
     @table = Table.find(@reservation.table_id)
     @order = Order.new(meal_id: @meal.id, reservation_id: @reservation.id, table_id: @table.id)
 
     if @order.save
-      redirect_to orders_index_path
+      redirect_to restaurant_meals_path(@table.restaurant_id)
     else
       render
     end
@@ -33,6 +32,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    redirect_to orders_destroy_path
   end
 
   private
