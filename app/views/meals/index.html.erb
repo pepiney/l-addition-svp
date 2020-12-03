@@ -50,7 +50,7 @@
                     <% end %>
                     <%= simple_form_for [@reservation, @order] do |f| %>
                       <%= f.input :meal, collection: @starters, include_blank: false %>
-                      <%= f.button :submit, 'Choisissez une entrée' %>
+                      <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-secondary" %>
                     <% end %>
 
 
@@ -62,7 +62,7 @@
                     <% end %>
                     <%= simple_form_for [@reservation, @order] do |f| %>
                       <%= f.input :meal, collection: @mains, include_blank: false %>
-                      <%= f.button :submit %>
+                      <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary" %>
                     <% end %>
 
                   <h2>Desserts</h2>
@@ -73,7 +73,7 @@
                     <% end %>
                     <%= simple_form_for [@reservation, @order] do |f| %>
                       <%= f.input :meal, collection: @desserts, include_blank: false %>
-                      <%= f.button :submit %>
+                      <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-secondary" %>
                     <% end %>
 
 
@@ -85,7 +85,7 @@
                     <% end %>
                     <%= simple_form_for [@reservation, @order] do |f| %>
                       <%= f.input :meal, collection: @beverages, include_blank: false %>
-                      <%= f.button :submit %>
+                      <%= f.button :submit, "Choisissez votre boissons", class:"btn btn-secondary" %>
                     <% end %>
 
 
