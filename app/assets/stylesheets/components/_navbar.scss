@@ -1,6 +1,18 @@
+.navbar-light .navbar-nav .nav-link {
+  color: #1d3c45;
+}
+
+.navbar-light .navbar-nav .show > .nav-link {
+  color:red;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #1d3c45;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background:#d2601A;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +21,37 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  border-radius: 50px;
+}
+
+.navbar-fixed-top{
+  justify-content: space-between;
+  transition:500ms ease;
+  background:transparent;
+}
+
+.navbar-fixed-top.scrolled{
+  z-index: 200;
+  background: rgba(190, 190, 190, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.btn-outline-dark {
+  border-radius: 6px;
+  height: 38px
+}
+
+.btn-secondary {
+  border-radius: 6px;
+}
+
+.navbar {
+  margin-top: -56px;
+}
+
+#query {
+  background-color:#EFF0EA;
+  color: black;
 }
