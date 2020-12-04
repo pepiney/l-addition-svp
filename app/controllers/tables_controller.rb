@@ -9,7 +9,7 @@ class TablesController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
     @table = Table.find(params[:id])
-    @reservation = Reservation.where(table_id: :id)
+    @reservation = Reservation.where(table_id: @table).last
   end
 
 end
