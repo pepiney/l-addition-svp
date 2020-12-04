@@ -1,10 +1,25 @@
-<h1>Table N°<%= @table.table_number %></h1>
 
-<%= @table.bill %>
-Paid: <%= @table.paid? %>
+            <div class="container-fluide">
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="card">
+                                
+                                <h1>Table N°<%= @table.table_number %></h1>
 
-<% @orders.each do |order| %>
-<%= order.meal.meal_name %>
-<%= order.meal.price %>€
-<%end%>
+                                <%= @table.bill %>
+                                Paid: <%= @table.paid? %>
 
+                                <% @orders.each do |order| %>
+                                <p><%= order.meal.meal_name %> - 
+                                <%= order.meal.price %>€</p>
+                                <%end%>
+                                <h2 class="border-top">total<p><%= @total %>€</p></h2>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>

@@ -9,7 +9,10 @@ class TablesController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @table = Table.find(params[:id])
     @reservation = Reservation.where(table_id: @table).last
-    @orders = @table.orders
+    @orders = Order.where(reservation_id: @reservation)
+    prices = []
+    @orders.each { |order| prices << order.meal.price}
+    @total = prices.sum
   end
 
 end
