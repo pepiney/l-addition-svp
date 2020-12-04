@@ -5,7 +5,6 @@
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 8px 8px 10px 2px rgba(0, 0, 255, 0.2);
-
 }
 .row {
   display: flex;
@@ -17,15 +16,14 @@ img {
   width: 100%;
   height: 200px;
   opacity: 1;
-
 }
 
 .card-footer {
-    padding: 0.75rem 0.25rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-    position:relative;
-    // background: linear-gradient(rgba(0,0,0,0.3) 22%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.9) 50%);
-    border-radius: 50px;
+  padding: 0.75rem 0.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  position: relative;
+  // background: linear-gradient(rgba(0,0,0,0.3) 22%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.9) 50%);
+  border-radius: 50px;
 }
 
 .card-descript {
@@ -38,7 +36,6 @@ img {
 
 .card p {
   color: white;
-   font-size: 0.5rem;
 }
 
 .card-body {
@@ -46,11 +43,16 @@ img {
 }
 
 .btn-reserv {
-position: relative;
-top: 0px; left: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
 }
 
 .food-type {
   padding: 10px;
   border: 1px dotted;
+}
+
+.font-size-home-pages {
+  font-size: 0.5rem;
 }
