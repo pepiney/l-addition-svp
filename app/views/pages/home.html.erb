@@ -5,20 +5,29 @@
                 <div class="card">
                     <div class="card-horizontal d-flex">
                         <div class="card-body ">
-                            <h1 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant), id:"deco"  %></h1>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <img src="<%= restaurant.photo %>" alt="resto" id="nav-img" >
+                      <div class="card-descript">
+                            <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant), id:"deco"  %></h4>
                     <p><%=restaurant.address%></p>
                     <p><em>"<%= restaurant.description%>"</p></em>
-                    <div class="card-footer">
-                        <img src="<%= restaurant.photo %>" alt="resto">
-                      <div class="card-descript">
-                        <p><%= link_to "Choose a new table", restaurant_tables_path(restaurant), class:"btn btn-secondary" %></p>
-                        <p><%= link_to "Menu", restaurant_meals_path(restaurant), class:"btn btn-secondary" %></p>
+
+                        <div class="btn-reserv">
+                          <div class="row">
+                            <div class="col-6 col-lg-6">
+                            <p><%= link_to "Reservez votre table", restaurant_tables_path(restaurant), class:"btn btn-dark" %></p>
+                           </div>
+                           <div class="col-6 col-lg-6">
+                            <p><%= link_to "Menu", restaurant_meals_path(restaurant), class:"btn btn-dark" %></p>
+                           </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                 </div>
             <%end%>
         </div>
     </div>
-</div>
+
