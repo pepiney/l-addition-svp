@@ -26,6 +26,7 @@ class MealsController < ApplicationController
     @beverages_select.each do |meal|
       @beverages << meal.meal_name
     end
+
   end
 
   def update
