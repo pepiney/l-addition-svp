@@ -14,7 +14,7 @@
         <li class="nav-item">
           <%# link_to "Commande en cours", reservation_orders_path(current_user.customer.reservation), class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown text-right">
           <%= image_tag "https://vignette.wikia.nocookie.net/loisetclark/images/7/74/Clark_30.PNG/revision/latest?cb=20180703121739&path-prefix=fr", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -26,7 +26,7 @@
           </div>
         </li>
       <%# else %>
-        <li class="nav-item">
+        <li class="nav-item text-right">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <%# end %>
