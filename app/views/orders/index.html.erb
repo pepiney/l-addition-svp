@@ -3,7 +3,8 @@
 
 
 <% @orders.each do |order| %>
-<%= order.meal_id %>
+<%= order.meal.meal_name %>
+<%= order.meal.price %>
 <%= link_to 'show', order_path(order) %>
 <%= link_to 'Destroy', order_path(order),
               method: :delete,
