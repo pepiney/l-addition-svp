@@ -41,7 +41,8 @@
                 <% end %>
 
               <% else %>
-
+                <div class="container-fluid">
+                  <div class="food-type">
                   <h2>Starters</h2>
                     <% @starters_select.each do |starter|%>
                       <%if @restaurant.name == starter.restaurant.name %>
@@ -52,8 +53,9 @@
                       <%= f.input :meal, collection: @starters, include_blank: false %>
                       <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-secondary" %>
                     <% end %>
+                    </div>
 
-
+                  <div class="food-type">
                   <h2>Mains</h2>
                     <% @mains_select.each do |main| %>
                       <%if @restaurant.name == main.restaurant.name %>
@@ -64,7 +66,9 @@
                       <%= f.input :meal, collection: @mains, include_blank: false %>
                       <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary" %>
                     <% end %>
+                     </div>
 
+                     <div class="food-type">
                   <h2>Desserts</h2>
                     <% @desserts_select.each do |dessert| %>
                       <%if @restaurant.name == dessert.restaurant.name %>
@@ -75,8 +79,9 @@
                       <%= f.input :meal, collection: @desserts, include_blank: false %>
                       <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-secondary" %>
                     <% end %>
+                       </div>
 
-
+                   <div class="food-type">
                   <h2>Beverages</h2>
                     <% @beverages_select.each do |beverage| %>
                       <%if @restaurant.name == beverage.restaurant.name %>
@@ -87,7 +92,8 @@
                       <%= f.input :meal, collection: @beverages, include_blank: false %>
                       <%= f.button :submit, "Choisissez votre boissons", class:"btn btn-secondary" %>
                     <% end %>
-
+                    </div>
+                  </div>
 
               <% end %>
             </div>
