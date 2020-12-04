@@ -4,8 +4,8 @@ class MealsController < ApplicationController
     @customer = Customer.where(user_id: current_user).first
     @reservation = Reservation.where(customer_id: @customer).last
     @order = Order.new
-    @meals = Meal.all
     @restaurant = Restaurant.find(params[:restaurant_id])
+    @meals = @restaurant.meals
     @starters_select = @meals.select { |meal| meal.meal_type == "Entrée" }
     @starters = []
     @starters_select.each do |meal|

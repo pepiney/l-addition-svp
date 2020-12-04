@@ -1,14 +1,19 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    
+    @orders = Order.where(reservation_id: params[:reservation_id])
+    prices = []
+    @orders.each { |order| prices << order.meal.price}
+    @total = prices.sum
   end
 
   def new
     @order = Order.new
+    
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.all
     @reservation = Reservation.find(@order.reservation_id)
   end
 
