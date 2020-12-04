@@ -3,4 +3,8 @@
 <%= @table.bill %>
 Paid: <%= @table.paid? %>
 
-<p><%= link_to "my order", reservation_orders_path(@reservation) %></p>
+<% @orders.each do |order| %>
+<%= order.meal.meal_name %>
+<%= order.meal.price %>€
+<%end%>
+

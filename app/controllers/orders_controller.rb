@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.all
     @reservation = Reservation.find(@order.reservation_id)
   end
 

@@ -10,6 +10,7 @@ class TablesController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @table = Table.find(params[:id])
     @reservation = Reservation.where(table_id: :id)
+    @orders = @table.orders
   end
 
 end
