@@ -4,14 +4,14 @@
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <div class="card">
-                                
+
                                 <h1>Table N°<%= @table.table_number %></h1>
 
                                 <%= @table.bill %>
                                 Paid: <%= @table.paid? %>
 
                                 <% @orders.each do |order| %>
-                                <p><%= order.meal.meal_name %> - 
+                                <p><%= order.meal.meal_name %> -
                                 <%= order.meal.price %>€</p>
                                 <%end%>
                                 <h2 class="border-top">total<p><%= @total %>€</p></h2>
