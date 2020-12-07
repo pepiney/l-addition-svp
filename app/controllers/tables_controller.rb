@@ -15,4 +15,10 @@ class TablesController < ApplicationController
     @total = prices.sum
   end
 
+  def update
+    @table = Table.find(params[:id])
+    @table.update(paid: true)
+    redirect_to root_path, alert: "Merci de votre visite."
+  end
+
 end
