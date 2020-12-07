@@ -18,15 +18,22 @@ class OrdersController < ApplicationController
   end
 
   def create
+
     @meal = Meal.find_by(meal_name: params[:order][:meal])
     @reservation = Reservation.find(params[:reservation_id])
     @table = Table.find(@reservation.table_id)
     @order = Order.new(meal_id: @meal.id, reservation_id: @reservation.id, table_id: @table.id)
 
-    if @order.save
-      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "restaurants/id/meals-#{@meals.id}")
+    if @order.save && @meal.meal_type == "Entrée"
+      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "anchor-entree")
+    elsif @order.save && @meal.meal_type == "Plat Principal"
+      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "anchor-plats")
+    elsif @order.save && @meal.meal_type == "Dessert"
+      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "anchor-dessert")
+    elsif @order.save && @meal.meal_type == "Boissons"
+      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "anchor-boissons")
     else
-      render
+      render :new
     end
   end
 
