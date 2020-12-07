@@ -5,12 +5,12 @@
                 <div class="card font-size-home-pages">
                     <div class="card-footer">
                       <%= link_to restaurant_path(restaurant) do  %>
-                        <img src="<%= restaurant.photo %>" alt="resto" id="nav-img" >
+                        <img src="<%= restaurant.photo %>" alt="resto" id="photo-resto" >
                       <% end %>
                       <div class="card-descript">
-                        <h4 class="card-title "><%= link_to restaurant.name, restaurant_path(restaurant), id:"deco"  %></h4>
-                        <p><em>"<%= restaurant.description%>"</p></em>
-                        <p> 🍴<%= restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
+                        <h4 class="card-title "><%= link_to restaurant.name, restaurant_path(restaurant), class:"deco"  %></h4>
+                        <p class="des-gps"><em>"<%= restaurant.description%>"</p></em>
+                        <p class="des-gps"> 🍴<%= restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
                         <div class="btn-reserv">
                           <div class="row">
                             <div class="col-4 col-lg-6">
