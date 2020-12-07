@@ -49,7 +49,7 @@
                         <p><%= starter.meal_name %> - <%= starter.price %>€</p>
                       <% end %>
                     <% end %>
-                    <%= simple_form_for [@reservation, @order] do |f| %>
+                    <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                       <%= f.input :meal, collection: @starters, include_blank: false %>
                       <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-secondary" %>
                     <% end %>
@@ -62,9 +62,9 @@
                         <p><%= main.meal_name %> - <%= main.price %>€</p>
                       <% end %>
                     <% end %>
-                    <%= simple_form_for [@reservation, @order] do |f| %>
+                    <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                       <%= f.input :meal, collection: @mains, include_blank: false %>
-                      <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary" %>
+                     <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary"%>
                     <% end %>
                      </div>
 
@@ -75,7 +75,7 @@
                         <p><%= dessert.meal_name %> - <%= dessert.price %>€</p>
                       <% end %>
                     <% end %>
-                    <%= simple_form_for [@reservation, @order] do |f| %>
+                    <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                       <%= f.input :meal, collection: @desserts, include_blank: false %>
                       <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-secondary" %>
                     <% end %>
@@ -88,7 +88,7 @@
                         <p><%= beverage.meal_name %> - <%= beverage.price %>€</p>
                       <% end %>
                     <% end %>
-                    <%= simple_form_for [@reservation, @order] do |f| %>
+                    <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                       <%= f.input :meal, collection: @beverages, include_blank: false %>
                       <%= f.button :submit, "Choisissez votre boissons", class:"btn btn-secondary" %>
                     <% end %>
@@ -103,4 +103,5 @@
         </div>
       </div>
     </div>
+
 
