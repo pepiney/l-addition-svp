@@ -8,45 +8,34 @@
           <div class="card-menu">
           <br>
           <h1 style="background:rgba(33, 33, 33, 0.7);" class="p-2">MENU</h1>
-
           <% if @reservation.nil? %>
-
             <h2>Entrées</h2>
             <% @starters.each do |starter|%>
               <%if @restaurant.name == starter.restaurant.name %>
                 <p><%= starter.meal_name %> - <%= starter.price %>€</p>
               <% end %>
             <% end %>
-
-
             <h2>Plats</h2>
             <% @mains.each do |main| %>
               <%if @restaurant.name == main.restaurant.name %>
                 <p><%= main.meal_name %> - <%= main.price %>€</p>
               <% end %>
             <% end %>
-
             <h2>Desserts</h2>
             <% @desserts.each do |dessert| %>
               <%if @restaurant.name == dessert.restaurant.name %>
                 <p><%= dessert.meal_name %> - <%= dessert.price %>€</p>
               <% end %>
             <% end %>
-
             <h2>Boissons</h2>
             <% @beverages.each do |beverage| %>
               <%if @restaurant.name == beverage.restaurant.name %>
                 <p><%= beverage.meal_name %> - <%= beverage.price %>€</p>
               <% end %>
             <% end %>
-
           <% else %>
-
-
             <div class="container-fluid">
               <div class="food-type">
-
-
               <h2 id="anchor-entree">Entrées</h2>
                 <% @starters_select.each do |starter|%>
                   <%if @restaurant.name == starter.restaurant.name %>
@@ -58,7 +47,6 @@
                   <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-secondary" %>
                 <% end %>
                 </div>
-
               <div class="food-type">
               <h2 id="anchor-plats">Plats</h2>
                 <% @mains_select.each do |main| %>
@@ -71,7 +59,6 @@
                  <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary"%>
                 <% end %>
                  </div>
-
                  <div class="food-type">
               <h2 id="anchor-dessert">Desserts</h2>
                 <% @desserts_select.each do |dessert| %>
@@ -84,7 +71,6 @@
                   <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-secondary" %>
                 <% end %>
                    </div>
-
                <div class="food-type">
               <h2 id="anchor-boissons">Boissons</h2>
                 <% @beverages_select.each do |beverage| %>
@@ -101,13 +87,11 @@
           <% end %>
           <br>
           </div>
+          <div class="container">
           <%= link_to "VOIR LA COMMANDE", restaurant_table_path(@restaurant, @reservation.table), class:"fixed-bottom panier"%>
-
+         </div> 
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

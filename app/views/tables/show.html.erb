@@ -1,34 +1,36 @@
 
-            <div class="container-fluide">
-                <div class="text-center">
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <div class="card">
+<div class="container-fluide">
+  <div class="text-center">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+              <div class="card">
 
-                                <h1>Table N°<%= @table.table_number %></h1>
+                 <h1>Table N°<%= @table.table_number %></h1>
 
-                                <%= @table.bill %>
-                                Paid: <%= @table.paid? %>
-
-                                <% @orders.each do |order| %>
-                                  <p><%= order.meal.meal_name %> -
-                                  <%= order.meal.price %>€ -
-                                  <%= order.reservation.customer.first_name %></p>
-                                <%end%>
-                                <div>
-                                  <h2 class="border-top">total<p><%= @total %>€</p></h2>
-                                  <% @customers.each do |customer| %>
-                                    <% customer.reservation.orders.each do |order|%>
-                                      <% @total_per_person += order.meal.price %>
-                                    <% end %>
-                                    <p><%= customer.first_name %> : <%= @total_per_person %></p>
-                                    <% @total_per_person = 0 %>
-                                  <% end %>
-                                </div>
-                            </div>
-                        </div>
-
+                 <%= @table.bill %>
+                 Paid: <%= @table.paid? %>
+                <% @orders.each do |order| %>
+                    <p><%= order.meal.meal_name %> -
+                    <%= order.meal.price %>€ -
+                    <%= order.reservation.customer.first_name %></p>
+                <%end%>
+                <div>
+                    <h2 class="border-top">total<p><%= @total %>€</p></h2>
+                    <% @customers.each do |customer| %>
+                    <% customer.reservation.orders.each do |order|%>
+                        <% @total_per_person += order.meal.price %>
+                    <% end %>
+                    <p><%= customer.first_name %> : <%= @total_per_person %></p>
+                    <% @total_per_person = 0 %>
+                    <% end %>
+                    <div class="container">
+                    <%= link_to 'Payez', restaurant_table_path(@restaurant, @table), method: :patch, class:"btn btn-secondary" %>
                     </div>
                 </div>
-
             </div>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
