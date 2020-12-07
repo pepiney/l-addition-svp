@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    
+
     @orders = Order.where(reservation_id: params[:reservation_id])
     prices = []
     @orders.each { |order| prices << order.meal.price}
@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    
+
   end
 
   def show
@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
     @order = Order.new(meal_id: @meal.id, reservation_id: @reservation.id, table_id: @table.id)
 
     if @order.save
-      redirect_to restaurant_meals_path(@table.restaurant_id)
+      redirect_to restaurant_meals_path(@table.restaurant_id, anchor: "restaurants/id/meals-#{@meals.id}")
     else
       render
     end
