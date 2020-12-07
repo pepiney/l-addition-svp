@@ -8,11 +8,13 @@ class TablesController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
     @table = Table.find(params[:id])
-    @reservation = Reservation.where(table_id: @table).last
-    @orders = Order.where(reservation_id: @reservation)
+    @reservations = Reservation.where(table_id: @table)
+    @orders = Order.where(table_id: @table)
     prices = []
     @orders.each { |order| prices << order.meal.price}
     @total = prices.sum
+    @customers = []
+    @reservations.each { |reservation| @customers << reservation.customer}
+    @total_per_person = 0
   end
-
 end

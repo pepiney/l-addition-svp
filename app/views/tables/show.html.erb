@@ -11,11 +11,20 @@
                                 Paid: <%= @table.paid? %>
 
                                 <% @orders.each do |order| %>
-                                <p><%= order.meal.meal_name %> -
-                                <%= order.meal.price %>€</p>
+                                  <p><%= order.meal.meal_name %> -
+                                  <%= order.meal.price %>€ -
+                                  <%= order.reservation.customer.first_name %></p>
                                 <%end%>
-                                <h2 class="border-top">total<p><%= @total %>€</p></h2>
-
+                                <div>
+                                  <h2 class="border-top">total<p><%= @total %>€</p></h2>
+                                  <% @customers.each do |customer| %>
+                                    <% customer.reservation.orders.each do |order|%>
+                                      <% @total_per_person += order.meal.price %>
+                                    <% end %>
+                                    <p><%= customer.first_name %> : <%= @total_per_person %></p>
+                                    <% @total_per_person = 0 %>
+                                  <% end %>
+                                </div>
                             </div>
                         </div>
 
