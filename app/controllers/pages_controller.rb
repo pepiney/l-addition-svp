@@ -4,6 +4,13 @@ class PagesController < ApplicationController
 
   def home
     @restaurants = Restaurant.all
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
+    @result = Geocoder.search([43.30319800993106, 5.373076608924484])
   end
 
   def restaurant_admin

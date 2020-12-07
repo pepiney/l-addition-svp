@@ -6,24 +6,24 @@
                     <div class="card-footer">
                         <img src="<%= restaurant.photo %>" alt="resto" id="nav-img" >
                       <div class="card-descript">
-                        <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant), id:"deco"  %></h4>
-                        <p><%=restaurant.address%></p>
+                        <h4 class="card-title "><%= link_to restaurant.name, restaurant_path(restaurant), id:"deco"  %></h4>
                         <p><em>"<%= restaurant.description%>"</p></em>
+                        <p> 🍴<%= restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
                         <div class="btn-reserv">
                           <div class="row">
                             <div class="col-4 col-lg-6">
                               <p><%= link_to "Menu", restaurant_meals_path(restaurant), class:"btn btn-dark" %></p>
                             </div>
                             <div class="col-8 col-lg-6">
-                              <p><%= link_to "Reservez votre table", restaurant_tables_path(restaurant), class:"btn btn-dark" %></p>
+                              <p><%= link_to "Choisissez votre table", restaurant_tables_path(restaurant), class:"btn btn-dark" %></p>
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                 </div>
             <%end%>
         </div>
     </div>
+
 

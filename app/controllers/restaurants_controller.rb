@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @tables = Table.all
     @meals = Meal.all
+    @marker = { lat: @restaurant.latitude, lng: @restaurant.longitude }
   end
 
   def create
