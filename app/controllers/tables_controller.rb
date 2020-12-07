@@ -17,7 +17,6 @@ class TablesController < ApplicationController
     @reservations.each { |reservation| @customers << reservation.customer}
     @total_per_person = 0
   end
-<<<<<<< HEAD
 
   def update
     @table = Table.find(params[:id])
@@ -25,6 +24,4 @@ class TablesController < ApplicationController
     redirect_to root_path, alert: "Merci de votre visite."
   end
 
-=======
->>>>>>> d4421708eb468c279c2d080ec7b526b3a4656c6a
 end
