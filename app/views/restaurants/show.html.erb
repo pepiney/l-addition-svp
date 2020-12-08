@@ -5,7 +5,6 @@
       <img src="<%= @restaurant.photo %>" alt="resto" id="nav-img" >
       <div class="card-descript">
         <h4 class="deco"><%= @restaurant.name%></h4>
-          <p class="des-gps" style="font-size: 0.6rem;"><%=@restaurant.address%></p>
           <p class="des-gps" style="font-size: 0.6rem;"><%= @restaurant.description%>"</p>
           <p class="des-gps" style="font-size: 0.6rem;"> 🍴<%= @restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
           <div class="row">
@@ -21,7 +20,7 @@
     </div>
   </div>
   <div id="map"
-    style="width: 100%; height: 200px;"
+    style="width: 100%; height: 400px;"
     data-marker="<%= @marker.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
