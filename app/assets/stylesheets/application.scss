@@ -14,10 +14,17 @@
 @import "components/index";
 @import "pages/index";
 
+.dropdown-menu {
+  background: linear-gradient(0.70turn, #FFFFFF, #fff1e1, #FFFFFF);
+}
+
+* {
+  font-family: arial;
+}
 
 .flash {
   border: solid;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color:#1d3c45;
   font-family: 'Baloo Bhaina 2', cursive;
   font-family: 'Balsamiq Sans', cursive;
@@ -33,7 +40,7 @@
 img {
   width: 100%;
   height: 60px;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .table-id a {

@@ -1,14 +1,13 @@
 <div class="container">
+  <div class="row justify-content-center">
   <div class="card">
     <div class="card-footer">
       <img src="<%= @restaurant.photo %>" alt="resto" id="nav-img" >
       <div class="card-descript">
         <h4 class="deco"><%= @restaurant.name%></h4>
-          <p class="des-gps"><%=@restaurant.address%></p>
-          <p class="des-gps" ><em>"<%= @restaurant.description%>"</p></em>
-          <p class="des-gps"> 🍴<%= @restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
-
-        <div class="btn-reserv">
+          <p class="des-gps" style="font-size: 0.6rem;"><%=@restaurant.address%></p>
+          <p class="des-gps" style="font-size: 0.6rem;"><%= @restaurant.description%>"</p>
+          <p class="des-gps" style="font-size: 0.6rem;"> 🍴<%= @restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
           <div class="row">
             <div class="col-4 col-lg-6">
               <p><%= link_to "Menu", restaurant_meals_path(@restaurant), class:"btn btn-dark" %></p>
