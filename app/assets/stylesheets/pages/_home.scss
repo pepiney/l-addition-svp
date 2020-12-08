@@ -13,14 +13,16 @@ h1 {
 
 
 .deco {
-  -webkit-text-stroke: 0.3px white;
+
   text-decoration: none;
   color: white;
   font-weight: bold;
-  text-shadow: 2px 2px 2px saddlebrown;
+  text-shadow: 1.5px 1.5px 1.5px saddlebrown;
   background-color: rgba(33, 33, 33, 0.2);
   border-radius: 2px;
   padding: 5px;
+  font-family: "arial", sans-serif;
+
 }
 
 .des-gps {
