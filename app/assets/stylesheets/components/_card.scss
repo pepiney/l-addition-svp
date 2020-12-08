@@ -1,33 +1,31 @@
-
 #photo-resto {
-  background:linear-gradient(rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.3));
+  background: linear-gradient(
+    rgba(100, 100, 100, 0.3),
+    rgba(100, 100, 100, 0.3)
+  );
   width: 100%;
   height: 200px;
 }
 
 .container-fluid {
-background-color: white;
-}
-
-.container-fluid h2 {
-background-color: white;
-border-radius: 10px;
+  background-color: white;
+  h2 {
+    border-radius: 10px;
+  }
 }
 
 #nav-img {
   width: 100%;
   height: 200px;
-
 }
 
-.card-menu{
+.card-menu {
   background-color: #1d3c45;
 }
 
-
 .card {
   padding: 0.25rem 0.25rem;
-  background-color:#1d3c45;
+  background-color: #1d3c45;
   color: #d2601a;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -82,14 +80,12 @@ border-radius: 10px;
 .food-type {
   padding: 15px;
   border-top: double 1px;
-  background-color:whitesmoke;
-
+  background-color: whitesmoke;
 }
 
 .food-type p {
   color: #1d3c45;
 }
-
 
 .font-size-home-pages {
   font-size: 0.5rem;
@@ -97,4 +93,8 @@ border-radius: 10px;
 
 #u {
   margin-bottom: 16px;
+}
+
+img {
+  background-size: auto;
 }

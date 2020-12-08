@@ -1,9 +1,11 @@
+<%= render 'shared/banner' %>
+
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
             <% @restaurants.each do |restaurant| %>
                 <div class="card font-size-home-pages">
-                    <div class="card-footer">
+                    <div class="card-footer" >
                       <%= link_to restaurant_path(restaurant) do  %>
                         <img src="<%= restaurant.photo %>" alt="resto" id="photo-resto" >
                       <% end %>
@@ -27,5 +29,5 @@
             <%end%>
         </div>
     </div>
-
+</div>
 
