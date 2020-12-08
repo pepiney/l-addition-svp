@@ -22,10 +22,10 @@ class ReservationsController < ApplicationController
 
   end
 
-  #def destroy
-    #@reservation = Reservation.find(params[:id])
-    #@reservation.table.update(booked: false)
-    #@reservation.destroy
-  #end
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.table.update(booked: false)
+    @reservation.destroy
+  end
 
 end

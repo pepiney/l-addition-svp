@@ -1,36 +1,38 @@
-
-<div class="container-fluide">
-  <div class="text-center">
-      <div class="row">
-        <div class="col-12 col-lg-6">
-              <div class="card-show-table">
-
-                 <h1>Table N°<%= @table.table_number %></h1>
-
-                 <%= @table.bill %>
-                 Paid: <%= @table.paid? %>
-                <% @orders.each do |order| %>
-                    <p><%= order.meal.meal_name %> -
-                    <%= order.meal.price %>€ -
-                    <%= order.reservation.customer.first_name %></p>
-                <%end%>
-                <div>
-                    <h2 class="border-top">total<p><%= @total %>€</p></h2>
-                    <% @customers.each do |customer| %>
-                    <% customer.reservation.orders.each do |order|%>
-                        <% @total_per_person += order.meal.price %>
-                    <% end %>
-                    <p><%= customer.first_name %> : <%= @total_per_person %></p>
-                    <% @total_per_person = 0 %>
-                    <% end %>
-                    <div class="container">
-                    <%= link_to 'Payez', restaurant_table_path(@restaurant, @table), method: :patch, class:"btn btn-dark" %>
-                    </div>
-                </div>
-            </div>
+<div class="col-12 col-lg-6 text-center">
+      <div class="card">
+         <h1>Table N°<%= @table.table_number %></h1>
+        <% @orders.each do |order| %>
+            <p><%= order.meal.meal_name %> -
+            <%= order.meal.price %>€ -
+            <%= order.reservation.customer.first_name %></p>
+        <%end%>
+        <div class="d-flex justify-content-around border-top">
+          <div class="d-flex flex-column">
+            <% if @customers.length > 1 && !@customer.reservation.orders.empty? %>
+            <h2>Partager<p><%= @split %>€</p></h2>
+            <%= link_to 'Payez', restaurant_table_path(@restaurant, @table, split_bill: @split), method: :patch, class:"btn btn-dark" %>
+            <% end %>
+          </div>
+          <div class="d-flex flex-column">
+            <h2>Total<p><%= @table.bill %>€</p></h2>
+            <%= link_to 'Payez', restaurant_table_path(@restaurant, @table, split_bill: @table.bill), method: :patch, class:"btn btn-dark" %>
+          </div>
+          <div class="d-flex flex-column">
+            <% @customers.each do |customer| %>
+            <% customer.reservation.orders.each do |order|%>
+                <% @total_per_person += order.meal.price %>
+            <% end %>
+            <% if customer.id == @reservation.customer_id && @total_per_person != 0 %>
+            <%# customer.first_name %>  <%# @total_per_person %>
+            <h2>Ma commande<p><%= @total_per_person %>€</p></h2>
+            <%= link_to 'Payez', restaurant_table_path(@restaurant, @table), method: :patch, class:"btn btn-dark" %>
+            <% end %>
+            <% @total_per_person = 0 %>
+            <% end %>
+          </div>
         </div>
-
     </div>
+    <div class="container">
+      <a class="fixed-bottom panier" href="/restaurants/<%=@restaurant.id%>/meals">RETOUR AU MENU</a>
     </div>
-
-    </div>
+</div>
