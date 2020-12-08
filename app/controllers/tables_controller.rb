@@ -21,7 +21,7 @@ class TablesController < ApplicationController
   def update
     @table = Table.find(params[:id])
     @table.update(paid: true)
-    redirect_to root_path, alert: "Merci de votre visite."
+    redirect_to root_path, alert: "Merci de votre visite"
   end
 
 end
