@@ -5,15 +5,14 @@
       <% @tables.each do |table| %>
         <div class="card">
           <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
-             <em><h3 class="table-id">Table N° <%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
-            <img src="https://conciergering.com/wp-content/uploads/2019/06/R%C3%A9server-un-restaurant.png" alt="">
-           <%= link_to "  Réserver  ", table_reservations_path(table), method: :post, remote: true, class:"btn btn-light" %><em>
+            <h3 class="table-id">Table N° <%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
+           <%= link_to "  Réserver  ", table_reservations_path(table), method: :post, remote: true, class:"btn btn-light" %>
           <%else%>
             <h3>No table available</h3>
           <% end %>
         </div>
       <% end %>
+       <%= link_to "back", root_path, class:"btn btn-gradient"  %>
     </div>
   </div>
 </div>
-<%= link_to "back", root_path, class:"btn btn-dark"  %>
