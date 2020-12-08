@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    
+
   end
 
   def show
@@ -35,6 +35,8 @@ class OrdersController < ApplicationController
     else
       render :new
     end
+    bill = @table.bill + @order.meal.price
+    @table.update(bill: bill)
   end
 
   def update
