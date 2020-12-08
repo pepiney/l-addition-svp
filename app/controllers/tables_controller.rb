@@ -20,7 +20,9 @@ class TablesController < ApplicationController
 
   def update
     @table = Table.find(params[:id])
-    @table.update(paid: true)
+    @table.update(paid: true, booked: false)
+    @orders = Order.where(table_id: @table)
+    @orders.destroy
     redirect_to root_path, alert: "Merci de votre visite."
   end
 

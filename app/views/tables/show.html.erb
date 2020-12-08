@@ -23,6 +23,7 @@
                     <p><%= customer.first_name %> : <%= @total_per_person %></p>
                     <% @total_per_person = 0 %>
                     <% end %>
+                    <h2 class="border-top">total shared<p><%= @total/@customers.length %>€</p></h2>
                     <div class="container">
                     <%= link_to 'Payez', restaurant_table_path(@restaurant, @table), method: :patch, class:"btn btn-secondary" %>
                     </div>
