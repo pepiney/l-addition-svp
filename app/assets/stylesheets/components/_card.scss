@@ -1,4 +1,19 @@
 
+.card-show-table {
+  background-color: whitesmoke;
+  padding: 0.25rem 0.25rem;
+  color: #c5a090;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0.2px 0.2px 0.2px 0.2px rgba(33, 33, 33, 0.7);
+  position: relative;
+  border: 1px;
+  p {
+    color: #393939;
+  }
+}
+
+
 #photo-resto {
   background:linear-gradient(rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.3));
   width: 100%;
@@ -11,7 +26,7 @@ background-color: white;
 
 .container-fluid h2 {
 background-color: white;
-border-radius: 10px;
+border-radius: 6px;
 }
 
 #nav-img {
@@ -21,19 +36,19 @@ border-radius: 10px;
 }
 
 .card-menu{
-  background-color: #1d3c45;
+  background-color: #e9ecef;
 }
 
 
 .card {
   padding: 0.25rem 0.25rem;
-  background-color:#1d3c45;
+  background-color:whitesmoke;
   color: #d2601a;
   margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 2px rgba(33, 33, 33, 0.7);
+  border-radius: 5px;
+  box-shadow: 0.1px 0.1px 0.2px 0.2px rgba(200, 200, 200, 0.7);
   position: relative;
-  border: 1px;
+  border: 0.2px;
 }
 .row {
   display: flex;
@@ -42,7 +57,7 @@ border-radius: 10px;
 }
 
 .card-footer:last-child {
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 3px;
 }
 // img {
@@ -52,8 +67,8 @@ border-radius: 10px;
 // }
 
 .card-footer {
-  background-color: #fff1e1;
-  padding: 0.25rem 0.25rem;
+  background-color: whitesmoke;
+  // padding: 0.25rem 0.25rem;
   position: relative;
 }
 
@@ -61,7 +76,7 @@ border-radius: 10px;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.75rem 1.25rem;
+  padding: 0.50rem 1.25rem;
   height: 100%;
 }
 
