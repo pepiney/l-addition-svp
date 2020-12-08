@@ -5,8 +5,8 @@
       <% @tables.each do |table| %>
         <div class="card">
           <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
-            <h3 class="table-id">table n°<%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
-            <%= link_to "reserver", table_reservations_path(table), method: :post, remote: true, class:"btn btn-secondary" %>
+            <h3 class="table-id">Table N° <%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
+            <em><%= link_to "  Réserver  ", table_reservations_path(table), method: :post, remote: true, class:"btn btn-light" %><em>
           <%else%>
             <h3>No table available</h3>
           <% end %>
@@ -15,5 +15,5 @@
     </div>
   </div>
 </div>
-<%= link_to "back", root_path, class:"btn btn-secondary"  %>
+<%= link_to "back", root_path, class:"btn btn-dark"  %>
 

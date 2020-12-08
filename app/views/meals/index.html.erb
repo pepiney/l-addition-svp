@@ -7,7 +7,7 @@
           <h6> <%= @restaurant.address %> </h6>
           <div class="card-menu">
           <br>
-          <h1 style="background:rgba(33, 33, 33, 0.7);" class="p-2">MENU</h1>
+          <h2 style="background:rgba(33, 33, 33, 0.7);" class="p-2">MENU</h2>
           <% if @reservation.nil? %>
             <h2>Entrées</h2>
             <% @starters.each do |starter|%>
@@ -44,7 +44,7 @@
                 <% end %>
                 <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                   <%= f.input :meal, collection: @starters, include_blank: false %>
-                  <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-secondary" %>
+                  <%= f.button :submit, 'Choisissez une entrée', class:"btn btn-dark" %>
                 <% end %>
                 </div>
               <div class="food-type">
@@ -56,7 +56,7 @@
                 <% end %>
                 <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                   <%= f.input :meal, collection: @mains, include_blank: false %>
-                 <%= f.button :submit, "Choisissez votre plat", class:"btn btn-secondary"%>
+                 <%= f.button :submit, "Choisissez votre plat", class:"btn btn-dark"%>
                 <% end %>
                  </div>
                  <div class="food-type">
@@ -68,7 +68,7 @@
                 <% end %>
                 <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                   <%= f.input :meal, collection: @desserts, include_blank: false %>
-                  <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-secondary" %>
+                  <%= f.button :submit, "Choisissez votre dessert", class:"btn btn-dark" %>
                 <% end %>
                    </div>
                <div class="food-type">
@@ -80,7 +80,7 @@
                 <% end %>
                 <%= simple_form_for([@reservation, @order], remote: true) do |f| %>
                   <%= f.input :meal, collection: @beverages, include_blank: false %>
-                  <%= f.button :submit, "Choisissez votre boissons", class:"btn btn-secondary" %>
+                  <%= f.button :submit, "Choisissez votre boissons", class:"btn btn-dark" %>
                 <% end %>
                 </div>
               </div>
@@ -89,7 +89,7 @@
           </div>
           <div class="container">
           <%= link_to "VOIR LA COMMANDE", restaurant_table_path(@restaurant, @reservation.table), class:"fixed-bottom panier"%>
-         </div> 
+         </div>
         </div>
       </div>
     </div>

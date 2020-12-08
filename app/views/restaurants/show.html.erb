@@ -3,9 +3,11 @@
     <div class="card-footer">
       <img src="<%= @restaurant.photo %>" alt="resto" id="nav-img" >
       <div class="card-descript">
-        <h4 class="card-title"><%= @restaurant.name%></h4>
-          <p><%=@restaurant.address%></p>
-          <p><em>"<%= @restaurant.description%>"</p></em>
+        <h4 class="deco"><%= @restaurant.name%></h4>
+          <p class="des-gps"><%=@restaurant.address%></p>
+          <p class="des-gps" ><em>"<%= @restaurant.description%>"</p></em>
+          <p class="des-gps"> 🍴<%= @restaurant.distance_to(@result.first.coordinates).to_f.round(1) %> km</p>
+
         <div class="btn-reserv">
           <div class="row">
             <div class="col-4 col-lg-6">
@@ -25,6 +27,6 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <br>
-  <%= link_to "Back", root_path, class:"btn btn-secondary" %>
+  <%= link_to "Back", root_path, class:"btn btn-dark" %>
 </div>
 
