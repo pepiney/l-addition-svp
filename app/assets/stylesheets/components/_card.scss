@@ -17,11 +17,8 @@
 
 
 #photo-resto {
-  background: linear-gradient(
-    rgba(100, 100, 100, 0.3),
-    rgba(100, 100, 100, 0.3)
-  );
-  width: 100%;
+  background:linear-gradient(rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.3));
+  object-fit: cover;
   height: 200px;
 }
 
