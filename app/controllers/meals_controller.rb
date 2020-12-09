@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @skip_footer = true
@@ -12,21 +13,25 @@ class MealsController < ApplicationController
     @starters = []
     @starters_select.each do |meal|
       @starters << meal.meal_name
+      @starters << meal.price
     end
     @mains_select = @meals.select { |meal| meal.meal_type == "Plat Principal" }
     @mains = []
     @mains_select.each do |meal|
       @mains << meal.meal_name
+      @mains << meal.price
     end
     @desserts_select = @meals.select { |meal| meal.meal_type == "Dessert" }
     @desserts = []
     @desserts_select.each do |meal|
       @desserts << meal.meal_name
+      @desserts << meal.price
     end
     @beverages_select = @meals.select { |meal| meal.meal_type == "Boissons" }
     @beverages = []
     @beverages_select.each do |meal|
       @beverages << meal.meal_name
+      @beverages << meal.price
     end
 
   end
