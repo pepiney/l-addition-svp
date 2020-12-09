@@ -66,15 +66,16 @@ color: #393939;
 .flash {
   border: solid;
   border-radius: 6px;
-  background-color:#393939;
-  font-family: 'Baloo Bhaina 2', cursive;
-  font-family: 'Balsamiq Sans', cursive;
+  background:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
   font-weight: bold;
   top: 10%;
   left: 0;
-  padding: 40px 80px;
+  padding: 60px 90px;
   position: relative;
   color: #d2601A;
+  font-size: 1.5em;
+  text-align: center;
+  top:8px;
 }
 
 
