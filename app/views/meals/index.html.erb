@@ -9,30 +9,38 @@
           <br>
           <h3 style="background:rgba(33, 33, 33, 5%); font-family: arial" class="p-2">MENU</h3>
           <% if @reservation.nil? %>
+          <div class="food-type">
             <h5>Entrées</h5>
-            <% @starters.each do |starter|%>
-              <%if @restaurant.name == starter.restaurant.name %>
+            <% @starters_select.each do |starter|%>
+              <%if @restaurant.id == @meals.first.restaurant_id %>
                 <p><%= starter.meal_name %> - <%= starter.price %>€</p>
               <% end %>
             <% end %>
+          </div>
+          <div class="food-type">
             <h5>Plats</h5>
-            <% @mains.each do |main| %>
-              <%if @restaurant.name == main.restaurant.name %>
+            <% @mains_select.each do |main| %>
+              <%if @restaurant.id == @meals.first.restaurant_id %>
                 <p><%= main.meal_name %> - <%= main.price %>€</p>
               <% end %>
             <% end %>
+            </div>
+            <div class="food-type">
             <h5>Desserts</h5>
-            <% @desserts.each do |dessert| %>
-              <%if @restaurant.name == dessert.restaurant.name %>
+            <% @desserts_select.each do |dessert| %>
+              <%if @restaurant.id == @meals.first.restaurant_id %>
                 <p><%= dessert.meal_name %> - <%= dessert.price %>€</p>
               <% end %>
             <% end %>
+            </div>
+            <div class="food-type">
             <h5>Boissons</h5>
-            <% @beverages.each do |beverage| %>
-              <%if @restaurant.name == beverage.restaurant.name %>
+            <% @beverages_select.each do |beverage| %>
+              <%if @restaurant.id == @meals.first.restaurant_id %>
                 <p><%= beverage.meal_name %> - <%= beverage.price %>€</p>
               <% end %>
             <% end %>
+            </div>
           <% else %>
             <div class="container-fluid">
               <div class="food-type">
@@ -84,12 +92,12 @@
                 <% end %>
                 </div>
               </div>
+         <div class="container">
+          <%= link_to "VOIR LA COMMANDE", restaurant_table_path(@restaurant, @reservation.table), class:"fixed-bottom panier"%>
+         </div>
           <% end %>
           <br>
           </div>
-          <div class="container">
-          <%= link_to "VOIR LA COMMANDE", restaurant_table_path(@restaurant, @reservation.table), class:"fixed-bottom panier"%>
-         </div>
         </div>
       </div>
     </div>
