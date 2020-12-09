@@ -16,6 +16,28 @@
 
 
 
+
+h6 {
+color: #393939;
+}
+
+
+#anchor-entree {
+color: #393939;
+}
+
+#anchor-plats {
+color: #393939;
+}
+
+#anchor-dessert {
+color: #393939;
+}
+
+#anchor-boissons {
+color: #393939;
+}
+
 .table-show p {
   color: rgba(33, 33, 33, 0.9);
 }
@@ -44,7 +66,7 @@
 .flash {
   border: solid;
   border-radius: 6px;
-  background-color:#1d3c45;
+  background-color:#393939;
   font-family: 'Baloo Bhaina 2', cursive;
   font-family: 'Balsamiq Sans', cursive;
   font-weight: bold;
@@ -68,12 +90,12 @@ img {
 
 
 a {
-  color:#1d3c45 ;
+  color:#393939 ;
   text-decoration: none;
 }
 
 a:hover {
-  color:#1d3c45 ;
+  color:#393939;
   text-decoration: none;
   transition: 0.2s ease-out;
   color: #d2601A;
@@ -81,12 +103,12 @@ a:hover {
 }
 
 .card-text a {
-  color:#1d3c45 ;
+  color:white;
   text-decoration: none;
 }
 
 .card-text a:hover {
-  color:#1d3c45 ;
+  color:#393939 ;
   text-decoration: none;
 }
 
