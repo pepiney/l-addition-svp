@@ -22,7 +22,7 @@
             <% customer.reservation.orders.each do |order|%>
                 <% @total_per_person += order.meal.price %>
             <% end %>
-            <% if customer.id == @reservation.customer_id && @total_per_person != 0 %>
+            <% if customer.id == @reservation.customer_id && @total_per_person != 0 && @table.bill > @total_per_person %>
             <%# customer.first_name %>  <%# @total_per_person %>
             <h2>Ma commande<p><%= @total_per_person %>€</p></h2>
             <%= link_to 'Payez', restaurant_table_path(@restaurant, @table), method: :patch, class:"btn btn-dark" %>
