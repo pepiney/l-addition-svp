@@ -8,15 +8,15 @@
       <%= current_user.customer.first_name.capitalize %>
     </strong>
     <% end %>
-  
+
   <% if current_user != @customer %>
   <%= image_tag "https://vignette.wikia.nocookie.net/loisetclark/images/7/74/Clark_30.PNG/revision/latest?cb=20180703121739&path-prefix=fr", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-  <% end %>   
+  <% end %>
   <div class="navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        
+
         <li class="nav-item dropdown text-right">
-        
+
 
           <div class="dropdown-menu dropdown-menu-right ml-50%" aria-labelledby="navbarDropdown">
             <%= link_to "Profil", "/profil", class: "dropdown-item" %>
@@ -25,15 +25,15 @@
             <%= link_to "Invitez vos amis", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-         
+
         </li>
-      
+
         <li class="nav-item text-right">
           <% if current_user == @customer %>
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           <% end %>
         </li>
-      
+
     </ul>
   </div>
 </div>

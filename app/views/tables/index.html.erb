@@ -6,7 +6,7 @@
       <div class="card-product-infos  text-center">
   <div class="card-product d-block justify-content-center">
         <%if @restaurant.name == table.restaurant.name # && table.paid? == false (a mettre si on veut afficher uniquement les tables non payés) %>
-             <h3>Table n° <%= link_to table.table_number, restaurant_table_path(@restaurant, table.id)%></h3>
+             <h3>Table n° <%=table.table_number%></h3>
         <div class="tof"><img src="https://d2ans0z9s1x1c.cloudfront.net/products/00163e6f-f177-1ee9-b8a6-a7abdd618899.jpg">
            </div>
           <div class="reserv"><%= link_to "  Réserver  ", table_reservations_path(table), method: :post, remote: true, class:"btn btn-light" %></div>
