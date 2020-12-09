@@ -14,6 +14,25 @@
 @import "components/index";
 @import "pages/index";
 
+
+
+.table-show p {
+  color: rgba(33, 33, 33, 0.9);
+}
+
+.table-show h1 {
+  color: rgba(33, 33, 33, 0.9);
+}
+.table-show h3 {
+  color: rgba(33, 33, 33, 0.9);
+}
+
+.table-show img {
+  background:linear-gradient(rgba(100, 100, 100, 0.3), rgba(100, 100, 100, 0.3));
+  object-fit: cover;
+  height: 200px;
+}
+
 .dropdown-menu {
   background: linear-gradient(0.70turn, #FFFFFF, #fff1e1, #FFFFFF);
 }
