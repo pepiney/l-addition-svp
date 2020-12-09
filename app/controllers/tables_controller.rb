@@ -30,7 +30,7 @@ class TablesController < ApplicationController
     split = @table.bill - params[:split_bill].to_f
     @table.bill == 0 if split == 0
     @table.update(paid: true, booked: false, bill: split)
-    redirect_to root_path, alert: "Merci de votre visite."
+    redirect_to root_path, alert: "Paiement validé, merci de votre visite"
   end
 
 end
