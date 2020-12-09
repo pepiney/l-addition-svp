@@ -8,3 +8,20 @@
   margin-right: auto;
   display: table;
 }
+
+.share  {
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.pay {
+  border-color: transparent;
+  background-image: linear-gradient(-180deg, orange 0%, #d2601a 100%);
+  box-shadow: 0 1rem 1.25rem 0 white,
+              0 -0.25rem 1.5rem #d2601a inset,
+              0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+              0 0.25rem 0.5rem 0 orange inset;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
