@@ -25,8 +25,12 @@ class TablesController < ApplicationController
     @table = Table.find(params[:id])
     @customer = Customer.where(user_id: current_user).first
     @reservation = Reservation.where(customer_id: @customer.id).last
+    if !@order.nil?
     Order.where(reservation_id: @reservation.id).destroy_all
+    end
+    if !@reservation.nil?
     @reservation.destroy
+    end
     split = @table.bill - params[:split_bill].to_f
     @table.bill == 0 if split == 0
     @table.update(paid: true, booked: false, bill: split)
