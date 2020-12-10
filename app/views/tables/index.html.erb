@@ -4,16 +4,18 @@
 
 <div class="row d-flex">
   <% @tables.each do |table| %>
+    <p><% @reservations.each do |reservation| %>
+      <% if reservation.table_id == table.id %>
+         <img src="<%= reservation.customer.avatar %>" class="avatar-sm">
+      <% end %>
+    <% end %>
+    </p>
   <div class="col">
     <div class="card" style="width: 13rem;">
       <div class="card-body table">
         <h5 class="card-title title">Table <%=table.table_number%></h5>
+
         <p class="card-text" style="height: 6rem;">
-          <% @reservations.each do |reservation| %>
-          <% if reservation.table_id == table.id %>
-          <%= reservation.customer_id%>
-          <% end %>
-          <% end %>
         </p>
         <div class="resa">
         <a class="card-title"><%= link_to "Réserver", table_reservations_path(table), method: :post, remote: true%></a>

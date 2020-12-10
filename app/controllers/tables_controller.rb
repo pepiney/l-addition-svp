@@ -6,7 +6,7 @@ class TablesController < ApplicationController
     @reservations = Reservation.where(table_id: @tables)
     @customer = Customer.where(user_id: current_user).first
     @reservation = Reservation.where(customer_id: @customer.id).last
-    @customers = Customer.where(id: @reservation.customer_id)
+    @customers = Customer.all
   end
 
   def show
