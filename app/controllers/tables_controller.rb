@@ -3,7 +3,10 @@ class TablesController < ApplicationController
     @skip_footer = true
     @restaurant = Restaurant.find(params[:restaurant_id])
     @tables = Table.where(restaurant: @restaurant).order(:table_number)
-    @reservation = Reservation.where(table_id: :id)
+    @reservations = Reservation.where(table_id: @tables)
+    @customer = Customer.where(user_id: current_user).first
+    @reservation = Reservation.where(customer_id: @customer.id).last
+    @customers = Customer.where(id: @reservation.customer_id)
   end
 
   def show
@@ -27,13 +30,13 @@ class TablesController < ApplicationController
     @customer = Customer.where(user_id: current_user).first
     @reservation = Reservation.where(customer_id: @customer.id).last
     if !@order.nil?
-    Order.where(reservation_id: @reservation.id).destroy_all
+      Order.where(reservation_id: @reservation.id).destroy_all
     end
     if !@reservation.nil?
-    @reservation.destroy
+      @reservation.destroy
     end
     split = @table.bill - params[:split_bill].to_f
-    @table.bill == 0 if split == 0
+    @table.bill.zero? if split.zero?
     @table.update(paid: true, booked: false, bill: split)
     redirect_to root_path, alert: "Paiement validé, merci de votre visite"
   end
