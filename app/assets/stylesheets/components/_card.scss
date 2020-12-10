@@ -40,12 +40,11 @@
 }
 
 .card-category h3 {
-  color: #d2601A;
+  color: #d2601a;
   position: relative;
   top: -34px;
   font-size: 1rem;
 }
-
 
 .card-category {
   background-size: cover;
@@ -57,18 +56,17 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 40px;
 }
-
 
 .card-product {
   overflow: hidden;
 
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
 }
@@ -78,7 +76,6 @@
   width: 200px;
   object-fit: cover;
   position: relative;
-
 }
 
 .card-product h2 {
@@ -90,13 +87,13 @@
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
 .card-product .card-product-infos {
-  position:relative
+  position: relative;
 }
 
 .card-show-table {
@@ -204,4 +201,35 @@
 
 img {
   background-size: auto;
+}
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
