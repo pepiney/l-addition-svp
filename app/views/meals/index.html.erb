@@ -41,6 +41,8 @@
               <% end %>
             <% end %>
             </div>
+            <p><%= link_to "Reservez votre table", restaurant_tables_path(@restaurant), class:"btn btn-dark" %></p>
+
           <% else %>
             <div class="container-fluid">
               <div class="food-type">
@@ -103,3 +105,4 @@
     </div>
   </div>
 </div>
+
