@@ -1,21 +1,22 @@
 <h1 class="text-center"><%= @restaurant.name %></h1>
-<br>
+
 <%= link_to "<<", root_path, class:"btn btn-dark" %>
 
 <div class="row d-flex">
   <% @tables.each do |table| %>
     <p><% @reservations.each do |reservation| %>
       <% if reservation.table_id == table.id %>
-         <img src="<%= reservation.customer.avatar %>" class="avatar-sm">
+         <img src="<%= reservation.customer.avatar%>" class="avatar-sm">
       <% end %>
     <% end %>
     </p>
   <div class="col">
-    <div class="card" style="width: 13rem;">
+    <div class="card" style="width: 12rem;">
       <div class="card-body table">
+      <img src="https://maisondescourtines.com/assets/chair.svg" alt="">
         <h5 class="card-title title">Table <%=table.table_number%></h5>
 
-        <p class="card-text" style="height: 6rem;">
+        <p class="card-text">
         </p>
         <div class="resa">
         <a class="card-title"><%= link_to "Réserver", table_reservations_path(table), method: :post, remote: true%></a>

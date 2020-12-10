@@ -1,6 +1,7 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .avatar-large {
   width: 56px;
@@ -23,7 +24,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%!important;
-  position: absolute;
+  position: relative;
   border: 2px solid #d2601a;
   z-index: 1;
   margin-top: 144px;

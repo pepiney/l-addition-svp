@@ -4,7 +4,7 @@
     <%= image_tag "https://img.over-blog-kiwi.com/0/79/10/23/20150713/ob_b63778_image.jpg" %>
     <% end %>
   <% if current_user != @customer %>
-  <%= image_tag "https://vignette.wikia.nocookie.net/loisetclark/images/7/74/Clark_30.PNG/revision/latest?cb=20180703121739&path-prefix=fr", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <%= image_tag current_user.customer.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <% end %>
   <div class="navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

@@ -5,8 +5,8 @@
         <div class="col-12 col-lg-6">
             <% @restaurants.each do |restaurant| %>
                 <div class="card font-size-home-pages">
-                    
-                     
+
+
                         <div class="card-trip">
                           <div class="card-trip-infos">
                             <div>
@@ -18,13 +18,13 @@
                               <h5 class="des-gps"> ⦿ <%= link_to restaurant.distance_to(@result.first.coordinates).to_f.round(1), restaurant_path(restaurant) %> km</h6>
                                <div class="row bouton">
                               <p><%= link_to "Menu", restaurant_meals_path(restaurant), class:"btn btn-dark" %></p>
-                               
+
                               <p><%= link_to "Choisissez votre table", restaurant_tables_path(restaurant), class:"btn btn-dark" %></p>
                                </div>
                             </div>
                           </div>
                         </div>
-                    
+
                 </div>
             <%end%>
         </div>

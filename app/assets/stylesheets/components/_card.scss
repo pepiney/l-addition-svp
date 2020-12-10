@@ -94,7 +94,7 @@
   color: #d2601a;
   margin-bottom: 20px;
   border-radius: 5px;
-  position: relative;
+  position: absolute;
   border: 0.2px;
 }
 .row {
@@ -127,7 +127,7 @@
 }
 
 .card-body {
-  padding: 0.75rem 0.25rem;
+  padding: 0.05rem 0.1rem;
 }
 
 .btn-reserv {
@@ -159,34 +159,45 @@ img {
 }
 
 .table {
-  background-image: url("https://www.flaticon.com/svg/vstatic/svg/1012/1012472.svg?token=exp=1607602002~hmac=a2f6bce493eb76b71df2981dbb03d2db");
   background-size: cover;
   background-position-y: center;
+}
+
+.table img{
+  height: 150px;
+  width: 100%;
+   border: outset #393939;
 }
 
 .resa {
     background-color: #d2601a;
     height: 26px;
-    width: 200px;
-    margin-left: -4px;
     text-align: center;
-    margin-bottom: -20px;
     border-radius: 5px;
+    margin-top: -11px;
 }
 
 .resa a {
     color: whitesmoke;
     text-decoration: none;
     font-weight: bold;
+
+}
+
+.resa a:hover {
+    color: #393939;
+    text-decoration: none;
+    font-weight: bold;
+
 }
 
 .title {
   background-color: transparent;
   margin-left: -4px;
   width: 200px;
-  margin-top: -35px;
+  margin-top: -40px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 12px;
 }
 
 .col {
@@ -194,6 +205,7 @@ img {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   max-width: 50%;
+  margin-top: -30px;
 }
 
 .card-trip {
@@ -207,6 +219,7 @@ img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+
 }
 
 .card-trip h2 {
