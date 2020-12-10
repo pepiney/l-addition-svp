@@ -1,3 +1,11 @@
+
+b, strong {
+    color:white;
+    padding-left: 180px;
+    font-family: "Noto Sans JP", sans-serif;
+  font-family: "Texturina", serif;
+}
+
 .navbar-toggler-icon {
   border: black;
 }
@@ -8,7 +16,8 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #393939;
+  color: #090909;
+  margin-top: -15%;
 }
 
 .navbar-light .navbar-nav .show > .nav-link,
