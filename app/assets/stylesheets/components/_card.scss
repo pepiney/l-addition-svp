@@ -1,44 +1,3 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
 .card-category h3 {
   color: #d2601a;
   position: relative;
@@ -111,10 +70,6 @@
 }
 
 #photo-resto {
-  background: linear-gradient(
-    rgba(100, 100, 100, 0.3),
-    rgba(100, 100, 100, 0.3)
-  );
   object-fit: cover;
   height: 200px;
 }
@@ -202,6 +157,45 @@
 img {
   background-size: auto;
 }
+
+.table {
+  background-image: url("https://www.flaticon.com/svg/vstatic/svg/1012/1012472.svg?token=exp=1607602002~hmac=a2f6bce493eb76b71df2981dbb03d2db");
+  background-size: cover;
+  background-position-y: center;
+}
+
+.resa {
+    background-color: #d2601a;
+    height: 26px;
+    width: 200px;
+    margin-left: -4px;
+    text-align: center;
+    margin-bottom: -20px;
+    border-radius: 5px;
+}
+
+.resa a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.title {
+  background-color: transparent;
+  margin-left: -4px;
+  width: 200px;
+  margin-top: -35px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  max-width: 50%;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
