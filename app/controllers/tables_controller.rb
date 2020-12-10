@@ -1,5 +1,6 @@
 class TablesController < ApplicationController
   def index
+    @skip_footer = true
     @restaurant = Restaurant.find(params[:restaurant_id])
     @tables = Table.where(restaurant: @restaurant).order(:table_number)
     @reservation = Reservation.where(table_id: :id)
