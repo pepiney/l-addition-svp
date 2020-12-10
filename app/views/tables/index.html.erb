@@ -1,4 +1,6 @@
 <h1 class="text-center"><%= @restaurant.name %></h1>
+<br>
+<%= link_to "<<", root_path, class:"btn btn-dark" %>
 
 <div class="row d-flex">
   <% @tables.each do |table| %>
