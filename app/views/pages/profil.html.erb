@@ -1,8 +1,13 @@
-<%= simple_form_for @customer do |f| %>
-  <%=f.input :last_name %>
-  <%=f.input :first_name %>
-  <%=f.input :address %>
-  <%=f.input :date_of_birth %>
-  <%=f.button :submit %>
-<% end %>
-
+<div class="col-12 col-lg-6 text-center">
+  <h1>Mise à jour Profil</h1>
+  <%= simple_form_for @customer do |f| %>
+    <%=f.input :last_name, placeholder: "Nom de Famille" %>
+    <%=f.input :first_name, placeholder: "Prénom" %>
+    <%=f.input :address, placeholder: "Adresse" %>
+    <%=f.input :date_of_birth,
+                  start_year: Time.now.year - 100,
+                  end_year: Time.now.year - 15,
+                  order: %i(day month year) %>
+    <%=f.button :submit, class:"panier"%>
+  <% end %>
+</div>
